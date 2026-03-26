@@ -10,8 +10,8 @@ const checkupImage =
 const doctorImage =
   "https://t4.ftcdn.net/jpg/06/44/21/33/360_F_644213335_cEte9L9Clkz5zwYtPmpgKUhfABbl66Wm.jpg";
 const joinUsImages = [
-  "./public/online-consulting.png",
-  "./public/pet-hospital.png",
+  "/online-consulting.png",
+  "/pet-hospital.png",
   // "https://images.pexels.com/photos/6646971/pexels-photo-6646971.jpeg?auto=compress&cs=tinysrgb&w=1400",
   // "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1400",
 ];
@@ -28,8 +28,7 @@ const missionPillars = [
     title: "Community Health Access",
     description:
       "Free checkups, awareness drives, and preventive care for families that need support the most.",
-    image:
-      "./public/62.png",
+    image: "/62.png",
   },
   {
     tag: "Social Growth",
