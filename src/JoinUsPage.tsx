@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import Reveal from "./components/Reveal";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
+import { sendToWhatsApp } from "./lib/whatsapp";
 
 const impactCards = [
   {
@@ -35,6 +36,48 @@ const updates = ["Rescue alerts", "Volunteer schedules", "Event updates"];
 function JoinUsPage() {
   const [isJobModalOpen, setIsJobModalOpen] = useState(false);
   const [isVolunteerModalOpen, setIsVolunteerModalOpen] = useState(false);
+
+  const handleJobSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") ?? "").trim();
+    const phone = String(formData.get("phone") ?? "").trim();
+    const area = String(formData.get("area") ?? "").trim();
+
+    const message = [
+      "New Daily Salary Job Application",
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Area: ${area}`,
+    ].join("\n");
+
+    sendToWhatsApp(message);
+    setIsJobModalOpen(false);
+    event.currentTarget.reset();
+  };
+
+  const handleVolunteerSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") ?? "").trim();
+    const phone = String(formData.get("phone") ?? "").trim();
+    const area = String(formData.get("area") ?? "").trim();
+    const availability = String(formData.get("availability") ?? "").trim();
+    const support = String(formData.get("support") ?? "").trim();
+
+    const message = [
+      "New Volunteer Application",
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Area: ${area}`,
+      `Availability: ${availability}`,
+      `How can help: ${support}`,
+    ].join("\n");
+
+    sendToWhatsApp(message);
+    setIsVolunteerModalOpen(false);
+    event.currentTarget.reset();
+  };
 
   useEffect(() => {
     if (!isJobModalOpen && !isVolunteerModalOpen) return;
@@ -95,7 +138,7 @@ function JoinUsPage() {
         <section className="join-job-card" id="careers">
           <Reveal className="join-job-media" direction="left">
             <img
-              src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=1200&q=80"
+              src="https://plus.unsplash.com/premium_photo-1771681267444-f9762835a2b6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Rescue team member carrying an injured dog"
             />
           </Reveal>
@@ -141,7 +184,7 @@ function JoinUsPage() {
           </Reveal>
           <Reveal className="join-volunteer-media" direction="right">
             <img
-              src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1400&q=80"
+              src="https://images.unsplash.com/photo-1573798484153-da43eda898f6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Volunteer with a rescued animal"
             />
           </Reveal>
@@ -160,7 +203,11 @@ function JoinUsPage() {
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <button className="join-whatsapp-btn" type="button">
+          <button
+            className="join-whatsapp-btn"
+            type="button"
+            onClick={() => sendToWhatsApp("Hi, I want to join the WhatsApp community updates group.")}
+          >
             join whatsgroup
           </button>
           </section>
@@ -183,10 +230,10 @@ function JoinUsPage() {
                   Close
                 </button>
               </header>
-              <form className="join-modal-form" onSubmit={(event) => event.preventDefault()}>
-                <input type="text" placeholder="Name" />
-                <input type="tel" placeholder="Phone" />
-                <input type="text" placeholder="Area" />
+              <form className="join-modal-form" onSubmit={handleJobSubmit}>
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="tel" name="phone" placeholder="Phone" required />
+                <input type="text" name="area" placeholder="Area" required />
                 <button className="join-modal-submit" type="submit">
                   Submit Application
                 </button>
@@ -212,12 +259,21 @@ function JoinUsPage() {
                   Close
                 </button>
               </header>
-              <form className="join-modal-form" onSubmit={(event) => event.preventDefault()}>
-                <input type="text" placeholder="Name" />
-                <input type="tel" placeholder="Phone" />
-                <input type="text" placeholder="Area" />
-                <input type="text" placeholder="Availability (e.g. Saturday, Sunday, Evenings)" />
-                <textarea placeholder="How can you help? (Feeding, cleaning, transport, social media...)" />
+              <form className="join-modal-form" onSubmit={handleVolunteerSubmit}>
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="tel" name="phone" placeholder="Phone" required />
+                <input type="text" name="area" placeholder="Area" required />
+                <input
+                  type="text"
+                  name="availability"
+                  placeholder="Availability (e.g. Saturday, Sunday, Evenings)"
+                  required
+                />
+                <textarea
+                  name="support"
+                  placeholder="How can you help? (Feeding, cleaning, transport, social media...)"
+                  required
+                />
                 <button className="join-modal-submit volunteer" type="submit">
                   Join as Volunteer
                 </button>

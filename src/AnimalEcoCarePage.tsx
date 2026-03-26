@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
 import Reveal from "./components/Reveal";
 import ScrollCarousel from "./components/ScrollCarousel";
+import EventAnnouncements from "./components/EventAnnouncements";
 
 const domesticRescueHighlights = [
   "Emergency rescue for injured domestic animals",
@@ -34,58 +36,116 @@ const wildRescueCards = [
 ];
 
 const domesticAnimalImages = [
-  "https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=900&q=80",
+  "/pet-cat-clinic.png",
+  "/pet-dog-clinic.png",
+  "/pet-grooming-1.png",
+  "/pet-mating-service.png",
+  "/rajwadi-horse.png",
+  "/sheep-clinic.png",
+  "/rsz_pexels-pixabay-33152.jpg",
+  "/rsz_pexels-pixabay-104827.jpg",
 ];
 
 const petRescueCarouselImages = [
   {
-    src: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
-    alt: "Innocent rescued dog receiving care",
+    src: "/pet-cat-clinic.png",
+    alt: "Pet cat receiving clinic support",
   },
   {
-    src: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=80",
-    alt: "Rescued cat under treatment support",
+    src: "/pet-dog-clinic.png",
+    alt: "Pet dog in outdoor clinic setting",
   },
   {
-    src: "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=1200&q=80",
-    alt: "Rabbit rescue and rehabilitation care",
+    src: "/pet-grooming-1.png",
+    alt: "Pet grooming and care showcase",
   },
   {
-    src: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Abandoned pet receiving comfort and food",
+    src: "/pet-mating-service.png",
+    alt: "Pet mating service support",
   },
   {
-    src: "https://images.unsplash.com/photo-1571566882372-1598d88abd90?auto=format&fit=crop&w=1200&q=80",
-    alt: "Rescued puppy looking emotionally vulnerable",
+    src: "/rajwadi-horse.png",
+    alt: "Rajwadi horse care support",
   },
   {
-    src: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1200&q=80",
-    alt: "Gentle cat rescue portrait",
+    src: "/sheep-clinic.png",
+    alt: "Sheep clinic treatment and care",
   },
   {
-    src: "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=80",
-    alt: "Small rabbit in protective care",
+    src: "/rsz_pexels-pixabay-33152.jpg",
+    alt: "Rabbit care and rescue visual",
   },
   {
-    src: "https://images.unsplash.com/photo-1601758124096-9ff8f4b43f17?auto=format&fit=crop&w=1200&q=80",
-    alt: "Innocent dog waiting for adoption",
+    src: "/rsz_pexels-pixabay-104827.jpg",
+    alt: "Cat rescue portrait visual",
+  },
+];
+
+const clinicServices = [
+  {
+    title: "Pet Grooming",
+    description:
+      "Fully equipped pet grooming salon to keep them looking their best from hair cuts to teeth brushing to bathing.",
+    image: "/pet-grooming-1.png",
+  },
+  {
+    title: "Pet Training",
+    description:
+      "Dealing with your pup's mood swings? We will help you get for it. Looking for dog training sessions at home?",
+    image: "/pet-dog-clinic.png",
+  },
+  {
+    title: "Home Consulting",
+    description:
+      "Our experts available for for Home Visits. Your pet deserves only the best consultation. Book your appointment now.",
+    image: "/home-consulting.png",
+  },
+  {
+    title: "Mating Service",
+    description:
+      "We provide mating services for your pets.we also help you to find out the best match for your pet mating in the easiest way.",
+    image: "/pet-mating-service.png",
+  },
+  {
+    title: "Pet Hospital",
+    description:
+      "Leading multispecialty pet care hospital that has the best veterinary doctors focused on your pet's health and wellbeing.",
+    image: "/pet-hospital.png",
+  },
+  {
+    title: "Online Consultation",
+    description:
+      "80% of a pet's health issues can be solved online. Get a call with first consultation. Ask for check up if neccessory.",
+    image: "/online-consulting.png",
   },
 ];
 
 function AnimalEcoCarePage() {
+  const [selectedDomesticImage, setSelectedDomesticImage] = useState<string | null>(null);
   const domesticCarouselImages = domesticAnimalImages.map((src, index) => ({
     src,
     alt: `Domestic animal rescue visual ${index + 1}`,
   }));
 
   const activeDomesticSlide = 0;
+
+  useEffect(() => {
+    if (!selectedDomesticImage) return;
+
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedDomesticImage(null);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onEscape);
+    };
+  }, [selectedDomesticImage]);
 
   const getDomesticSlideDistance = (index: number) => {
     const totalSlides = domesticAnimalImages.length;
@@ -152,7 +212,12 @@ function AnimalEcoCarePage() {
               aria-label="Domestic animal rescue visuals"
             >
               {domesticAnimalImages.map((image, index) => (
-                <article className="impact-3d-slide" style={getDomesticSlideStyle(index)} key={image}>
+                <article
+                  className="impact-3d-slide clickable"
+                  style={getDomesticSlideStyle(index)}
+                  key={image}
+                  onClick={() => setSelectedDomesticImage(image)}
+                >
                   <img src={image} alt={`Domestic animal rescue visual ${index + 1}`} />
                 </article>
               ))}
@@ -174,6 +239,28 @@ function AnimalEcoCarePage() {
             </div>
           </div>
         </section>
+
+        <Reveal>
+          <section className="medical-hub-section animal-services-section">
+            <header className="medical-hub-section-head">
+              <h2>Services</h2>
+            </header>
+
+            <div className="animal-services-grid" role="list">
+              {clinicServices.map((service, index) => (
+                <Reveal key={service.title} delay={0.05 * index}>
+                  <article className="animal-service-card" role="listitem">
+                    <img src={service.image} alt={service.title} className="animal-service-image" />
+                    <div className="animal-service-content">
+                      <h3>{service.title}</h3>
+                      <p>{service.description}</p>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </section>
+        </Reveal>
 
         <section className="medical-hub-section clinical-benefits-style">
           <div className="impact-pillars-head">
@@ -226,10 +313,47 @@ function AnimalEcoCarePage() {
           </ol>
           </section>
         </Reveal>
+
+        <EventAnnouncements
+          title="Animal & Eco Care Announcements"
+          domain="animal-eco-care"
+          limit={3}
+          className="medical-hub-section"
+        />
       </main>
       <div className="about-footer-flow">
         <SiteFooter />
       </div>
+
+      {selectedDomesticImage ? (
+        <div
+          className="impact-image-modal-overlay"
+          role="button"
+          tabIndex={0}
+          onClick={() => setSelectedDomesticImage(null)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setSelectedDomesticImage(null);
+            }
+          }}
+        >
+          <section
+            className="impact-image-modal-card"
+            onClick={(event) => event.stopPropagation()}
+            aria-label="Selected domestic animal rescue image"
+          >
+            <button
+              type="button"
+              className="impact-image-modal-close"
+              onClick={() => setSelectedDomesticImage(null)}
+              aria-label="Close image preview"
+            >
+              ×
+            </button>
+            <img src={selectedDomesticImage} alt="Domestic rescue enlarged preview" />
+          </section>
+        </div>
+      ) : null}
     </div>
   );
 }

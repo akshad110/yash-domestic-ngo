@@ -8,6 +8,7 @@ function SiteFooter() {
         <div className="footer-main">
           <Reveal direction="left">
             <section className="footer-brand-col">
+              {/* <img src="public\yash-dog-logo-1-e1710572557873-removebg-preview.png" alt="Yash Dogs" className="footer-brand-logo" /> */}
               <p className="footer-kicker">The Unity Community</p>
               <h2>Healing lives, nurturing ecosystems, strengthening futures.</h2>
               <p>
@@ -15,6 +16,9 @@ function SiteFooter() {
                 growth, and animal-eco care. This platform helps people discover our
                 programs, track impact, and join meaningful action.
               </p>
+              <Link className="footer-review-btn" to="/reviews?dropReview=1">
+                Drop a Review
+              </Link>
             </section>
           </Reveal>
 
@@ -42,22 +46,9 @@ function SiteFooter() {
           <Reveal direction="right" delay={0.15}>
             <section className="footer-links-col">
               <h3>Connect</h3>
-              <a href="mailto:hello@unitycommunity.org">hello@unitycommunity.org</a>
-              <a href="tel:+911234567890">+91 12345 67890</a>
-              <div className="footer-social-links" aria-label="Social media links">
-                <a href="#" aria-label="Instagram">
-                  Instagram
-                </a>
-                <a href="#" aria-label="LinkedIn">
-                  LinkedIn
-                </a>
-                <a href="#" aria-label="YouTube">
-                  YouTube
-                </a>
-                <a href="#" aria-label="X">
-                  X
-                </a>
-              </div>
+              <p className="footer-contact-line">Nr. Surmandir Cinema, Palanpur, GJ</p>
+              <a href="tel:+919081760076">+91 9081760076</a>
+              <a href="mailto:contact@yashdogs.com">contact@yashdogs.com</a>
             </section>
           </Reveal>
         </div>

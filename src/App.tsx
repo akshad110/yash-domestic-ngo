@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type TouchEvent } from "react";
 import { Link } from "react-router-dom";
+import EventAnnouncements from "./components/EventAnnouncements";
 import Reveal from "./components/Reveal";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
@@ -9,8 +10,8 @@ const checkupImage =
 const doctorImage =
   "https://t4.ftcdn.net/jpg/06/44/21/33/360_F_644213335_cEte9L9Clkz5zwYtPmpgKUhfABbl66Wm.jpg";
 const joinUsImages = [
-  "https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "./public/online-consulting.png",
+  "./public/pet-hospital.png",
   // "https://images.pexels.com/photos/6646971/pexels-photo-6646971.jpeg?auto=compress&cs=tinysrgb&w=1400",
   // "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1400",
 ];
@@ -28,7 +29,7 @@ const missionPillars = [
     description:
       "Free checkups, awareness drives, and preventive care for families that need support the most.",
     image:
-      "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=1200&q=80",
+      "./public/62.png",
   },
   {
     tag: "Social Growth",
@@ -71,9 +72,6 @@ const aboutValues = [
       "We protect animals and local ecosystems through rescue efforts, treatment support, and awareness drives.",
   },
 ];
-
-const aboutUsShowcaseImage =
-  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80";
 
 const missionRouteByTag: Record<string, string> = {
   "Medical Hub": "/medical-hub",
@@ -256,6 +254,12 @@ function App() {
           </div>
         </section>
 
+        <EventAnnouncements
+          title="Upcoming Community Events"
+          limit={3}
+          className="home-event-announcements"
+        />
+
         <section className="impact-pillars-section" id="our-pillars">
           <Reveal className="impact-pillars-head">
             <p className="impact-pillars-kicker">What We Do</p>
@@ -369,31 +373,106 @@ function App() {
             <div className="about-us-stage">
               <div className="about-us-main-grid">
                 <Reveal className="about-us-media-panel" direction="left">
-                  <div className="about-us-media-frame">
-                    <img
-                      src={aboutUsShowcaseImage}
-                      alt="Team members collaborating together"
-                    />
+                  <div className="about-us-media-frame about-us-media-placeholder">
+                  <img src="/25.png" alt="Yash Domestic clinic entrance" />
                   </div>
                 </Reveal>
 
                 <Reveal className="about-us-overview" direction="right">
-                  <p className="about-us-kicker">About Us</p>
-                  <h2>One platform, many ways to create meaningful change.</h2>
+                  <p className="about-us-kicker">Welcome to Pet Clinic</p>
+                  <p className="about-us-clinic-subtitle">
+                    BEST PET CLINIC IN PALANPUR, GUJARAT
+                  </p>
+                  <h2>The Yash Domestic Clinic</h2>
                   <p className="about-us-copy">
-                    This website is the digital home of our shared mission. It
-                    brings together healthcare outreach, social development, and
-                    animal-eco care into one clear and action-focused experience.
-                    Visitors can explore our work, understand impact, and quickly
-                    find ways to contribute.
+                    The Yash Domestic Clinic is on a mission of ensuring each pet gets
+                    the best in healthcare in India. A multispecialty hospital with
+                    advanced equipment, skilled doctors practicing global standards of
+                    veterinary and passion for pets in the heart of each of our staff
+                    members.
                   </p>
-                  <p className="about-us-copy secondary">
-                    We designed this space to feel transparent, hopeful, and
-                    practical so every supporter, volunteer, and partner can connect
-                    with the cause in a meaningful way.
+                  <p className="about-us-copy secondary about-us-strong-line">
+                    Yash Domestic Clinic relocated in 2017. We are here to Redefine
+                    Veterinary.
                   </p>
+                  <ul className="about-us-clinic-list">
+                    <li>Multi Speciality Pet Hospital</li>
+                    <li>Pet Grooming Center</li>
+                    <li>Pet Training Center</li>
+                    <li>Pet Care Products</li>
+                  </ul>
                 </Reveal>
               </div>
+
+              <Reveal>
+                <section className="about-doctor-section" aria-label="Doctor profile">
+                  <header className="about-doctor-head">
+                    <h2>Meet Our Doctor</h2>
+                    <p>SEASONED AND SKILLED STAFF</p>
+                  </header>
+
+                  <article className="about-doctor-card">
+                    <div className="about-doctor-image-wrap">
+                      <img src="\Dr-Ramesh-N-Ilasariya-370x358.png" alt="Dr. Ramesh N. Ilasariya" />
+                    </div>
+                    <div className="about-doctor-content">
+                      <p className="about-doctor-kicker">PET ANIMAL DOCTOR</p>
+                      <h3>Dr. RAMESH N. ILASARIYA</h3>
+                      <p className="about-doctor-copy">
+                        He is known as one of India&apos;s foremost veterinary practitioner.
+                      </p>
+                      <div className="about-doctor-social" aria-label="Doctor social links">
+                        <a href="#" aria-label="Facebook">
+                          f
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                          t
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                          y
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                          in
+                        </a>
+                      </div>
+                      <button type="button" className="about-doctor-btn">
+                        Read More
+                      </button>
+                    </div>
+                  </article>
+                </section>
+              </Reveal>
+
+              <Reveal>
+                <section className="about-facilities-section" aria-label="Clinic facilities">
+                  <div className="about-facilities-content">
+                    <article>
+                      <h3>In house Facilities</h3>
+                      <p>
+                        Clinic and pet shop, Veterinary dentistry, X-ray, ECG, Sonography, Pet
+                        hostel for dogs and cats, Diagnostic laboratory,
+                      </p>
+                    </article>
+                    <article>
+                      <h3>Laboratory Services</h3>
+                      <p>
+                        We have in house lab services. We also have a tie up with vet labs in
+                        the country and abroad for special check ups.
+                      </p>
+                    </article>
+                    <article>
+                      <h3>Surgeries</h3>
+                      <p>
+                        We perform various Routine and Advanced Surgeries at our clinic with
+                        postoperative care.
+                      </p>
+                    </article>
+                  </div>
+                  <div className="about-facilities-image-wrap">
+                    <img src="/26.png" alt="Yash Domestic clinic entrance" />
+                  </div>
+                </section>
+              </Reveal>
 
               <div
                 className="about-us-highlights"

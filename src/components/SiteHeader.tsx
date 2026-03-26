@@ -70,7 +70,7 @@ function SiteHeader({ activeHome: _activeHome = false }: SiteHeaderProps) {
   return (
     <header className="site-header">
       <div className="brand-logo" aria-label="Site logo">
-        <div className="brand-logo-circle">+</div>
+        <img src="/yash-dog-logo.jpg" alt="Yash Dogs" className="brand-logo-image" />
       </div>
       <button
         className="nav-toggle"

@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
 import SlideInLeft from "./components/SlideInLeft";
 import Reveal from "./components/Reveal";
 import ScrollCarousel from "./components/ScrollCarousel";
+import EventAnnouncements from "./components/EventAnnouncements";
 
 const donationImpactItems = [
   "Free medical camps",
@@ -17,14 +19,14 @@ const clinicalBenefits = [
     description: "Doctor consultation and diagnosis",
     caption: "Compassion-led diagnosis support",
     image:
-      "https://images.unsplash.com/photo-1666214277655-ae6f3d77bfbc?auto=format&fit=crop&w=1200&q=80",
+      "/29.png",
   },
   {
     title: "Medicine Distribution",
     description: "Essential medicines provided free",
     caption: "Essential care delivered consistently",
     image:
-      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1200&q=80",
+      "/39.png",
   },
   {
     title: "Health Awareness",
@@ -36,14 +38,14 @@ const clinicalBenefits = [
 ];
 
 const impactGallery = [
-  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1580281657527-47f249e8f4df?auto=format&fit=crop&w=800&q=80",
+  "/27.png",
+  "/29.png",
+  "/31.png",
+  "/39.png",
+  "/62.png",
+  "/63.png",
+  "/33.png",
+  "/home-consulting.png",
 ];
 
 const treatmentGallery = [
@@ -74,7 +76,26 @@ const treatmentGallery = [
 ];
 
 function MedicalHubPage() {
+  const [selectedImpactImage, setSelectedImpactImage] = useState<string | null>(null);
   const activeImpactSlide = 0;
+
+  useEffect(() => {
+    if (!selectedImpactImage) return;
+
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedImpactImage(null);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onEscape);
+    };
+  }, [selectedImpactImage]);
 
   const getImpactSlideDistance = (index: number) => {
     const totalSlides = impactGallery.length;
@@ -141,7 +162,12 @@ function MedicalHubPage() {
           <Reveal>
             <div className="impact-3d-slider" aria-label="Donation impact image slider">
               {impactGallery.map((image, index) => (
-                <article className="impact-3d-slide" style={getImpactSlideStyle(index)} key={image}>
+                <article
+                  className="impact-3d-slide clickable"
+                  style={getImpactSlideStyle(index)}
+                  key={image}
+                  onClick={() => setSelectedImpactImage(image)}
+                >
                   <img src={image} alt={`Donation impact visual ${index + 1}`} />
                 </article>
               ))}
@@ -200,6 +226,13 @@ function MedicalHubPage() {
           </div>
         </section>
 
+        <EventAnnouncements
+          title="Medical Hub Announcements"
+          domain="medical-hub"
+          limit={3}
+          className="medical-hub-section"
+        />
+
         <Reveal>
           <section className="medical-hub-section">
           <header className="medical-hub-section-head">
@@ -220,6 +253,36 @@ function MedicalHubPage() {
       <div className="about-footer-flow">
         <SiteFooter />
       </div>
+
+      {selectedImpactImage ? (
+        <div
+          className="impact-image-modal-overlay"
+          role="button"
+          tabIndex={0}
+          onClick={() => setSelectedImpactImage(null)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setSelectedImpactImage(null);
+            }
+          }}
+        >
+          <section
+            className="impact-image-modal-card"
+            onClick={(event) => event.stopPropagation()}
+            aria-label="Selected donation impact image"
+          >
+            <button
+              type="button"
+              className="impact-image-modal-close"
+              onClick={() => setSelectedImpactImage(null)}
+              aria-label="Close image preview"
+            >
+              ×
+            </button>
+            <img src={selectedImpactImage} alt="Donation impact enlarged preview" />
+          </section>
+        </div>
+      ) : null}
     </div>
   );
 }

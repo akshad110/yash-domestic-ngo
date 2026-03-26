@@ -4,6 +4,7 @@ import Reveal from "./components/Reveal";
 import ScrollCarousel from "./components/ScrollCarousel";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
+import EventAnnouncements from "./components/EventAnnouncements";
 
 const educationInitiatives = [
   {
@@ -12,7 +13,7 @@ const educationInitiatives = [
     detail:
       "Community-led reading circles and remedial learning sessions help children build strong literacy confidence.",
     image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1692269725836-fbd72e98883f?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Skill development",
@@ -28,7 +29,7 @@ const educationInitiatives = [
     detail:
       "Mentoring and group sessions improve financial awareness, decision-making, and community participation.",
     image:
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1692269725851-f5d3a3f02807?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Youth career guidance",
@@ -36,7 +37,7 @@ const educationInitiatives = [
     detail:
       "Career conversations and exposure activities help students choose informed paths for higher studies and jobs.",
     image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600792172671-1586e08cbaff?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -52,7 +53,7 @@ const environmentalImages = [
     alt: "Volunteers cleaning coastal waste",
   },
   {
-    src: "https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=1200&q=80",
+    src: "public/rsz_pexels-pixabay-33152.jpg",
     alt: "Color coded waste management bins",
   },
   {
@@ -83,30 +84,30 @@ const environmentalImages = [
 
 const educationalTourImages = [
   {
-    src: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80",
+    src: "https://images.unsplash.com/photo-1764072970350-2ce4f354a483?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Students visiting natural and cultural sites",
   },
   {
-    src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80",
+    src: "https://images.unsplash.com/photo-1601734327474-a5be8cf68cf0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Students exploring outdoor learning environments",
   },
   {
-    src: "https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&w=1600&q=80",
+    src: "https://images.unsplash.com/photo-1513663769539-e0024fe5e097?q=80&w=1019&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Students participating in guided educational tours",
   },
 ];
 
 const treePlantationImages = [
   {
-    src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1700&q=80",
+    src: "https://plus.unsplash.com/premium_photo-1681140560926-ea741789469a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Community tree plantation drive with children",
   },
   {
-    src: "https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1700&q=80",
+    src: "https://images.unsplash.com/photo-1748333824265-67df5e71f98c?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "People planting saplings together in a green field",
   },
   {
-    src: "https://images.unsplash.com/photo-1615092296061-e2ccfeb2f3d6?auto=format&fit=crop&w=1700&q=80",
+    src: "https://images.unsplash.com/photo-1698692019280-1c17d47085cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Volunteers caring for young planted trees",
   },
 ];
@@ -342,7 +343,7 @@ function SocialGrowthPage() {
           <div className="social-layout-grid reverse">
             <img
               className="social-feature-image small"
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80"
+              src="public\62.png"
               alt="Volunteers conducting school awareness sessions"
             />
             <article className="social-info-card">
@@ -358,6 +359,13 @@ function SocialGrowthPage() {
           </div>
           </section>
         </Reveal>
+
+        <EventAnnouncements
+          title="Social Growth Announcements"
+          domain="social-growth"
+          limit={3}
+          className="medical-hub-section social-panel"
+        />
       </main>
       <div className="about-footer-flow">
         <SiteFooter />

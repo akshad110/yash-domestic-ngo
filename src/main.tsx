@@ -1,6 +1,6 @@
 import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import App from "./App";
 import AnimalEcoCarePage from "./AnimalEcoCarePage.tsx";
 import BranchesPage from "./BranchesPage.tsx";
@@ -9,6 +9,13 @@ import JoinUsPage from "./JoinUsPage.tsx";
 import MedicalHubPage from "./MedicalHubPage.tsx";
 import ReviewsPage from "./ReviewsPage.tsx";
 import SocialGrowthPage from "./SocialGrowthPage.tsx";
+import AdminLayout from "./components/admin/AdminLayout.tsx";
+import ProtectedRoute from "./components/admin/ProtectedRoute.tsx";
+import AdminBranches from "./pages/admin/Branches.tsx";
+import Dashboard from "./pages/admin/Dashboard.tsx";
+import AdminLogin from "./pages/admin/AdminLogin.tsx";
+import AdminEvents from "./pages/admin/Events.tsx";
+import AdminReviews from "./pages/admin/Reviews.tsx";
 import "./tailwind.css";
 import "./style.css";
 
@@ -43,6 +50,21 @@ createRoot(document.getElementById("app")!).render(
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/join-us" element={<JoinUsPage />} />
         <Route path="/reviews" element={<ReviewsPage />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="reviews" element={<AdminReviews />} />
+          <Route path="branches" element={<AdminBranches />} />
+          <Route path="events" element={<AdminEvents />} />
+        </Route>
+        <Route path="/admin/*" element={<Navigate to="/admin/dashboard" replace />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
