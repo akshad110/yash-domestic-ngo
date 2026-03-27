@@ -56,7 +56,7 @@ function BranchesPage() {
         <Reveal>
           <section className="branches-sub-grid">
           <article className="branches-sub-list-card">
-            <h2>Sub Branches</h2>
+            <h2>Branches</h2>
             <p>Click a branch to view details.</p>
             <div className="branches-sub-list" role="list">
               {branches.map((branch) => (
