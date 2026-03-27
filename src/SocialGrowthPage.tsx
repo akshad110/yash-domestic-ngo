@@ -53,7 +53,7 @@ const environmentalImages = [
     alt: "Volunteers cleaning coastal waste",
   },
   {
-    src: "public/rsz_pexels-pixabay-33152.jpg",
+    src: "/rsz_pexels-pixabay-33152.jpg",
     alt: "Color coded waste management bins",
   },
   {
@@ -343,7 +343,7 @@ function SocialGrowthPage() {
           <div className="social-layout-grid reverse">
             <img
               className="social-feature-image small"
-              src="public\62.png"
+              src="/62.png"
               alt="Volunteers conducting school awareness sessions"
             />
             <article className="social-info-card">
