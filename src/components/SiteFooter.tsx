@@ -39,7 +39,6 @@ function SiteFooter() {
               <Link to="/medical-hub">Medical Hub</Link>
               <Link to="/social-growth">Social Growth</Link>
               <Link to="/animal-eco-care">Animal &amp; Eco Care</Link>
-              <Link to="/join-us#careers">Careers</Link>
             </section>
           </Reveal>
 

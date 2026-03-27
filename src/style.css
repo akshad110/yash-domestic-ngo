@@ -33,7 +33,7 @@
 
 .reviews-hero {
   width: min(1120px, 100%);
-  margin: 0 auto;
+  margin: clamp(3rem, 4vw, 2.6rem) auto 0;
   text-align: center;
   border-radius: 18px;
   border: 1px solid rgba(176, 223, 204, 0.56);
@@ -377,6 +377,10 @@
 }
 
 @media (max-width: 680px) {
+  .reviews-hero {
+    margin-top: 1.25rem;
+  }
+
   .reviews-grid {
     columns: 1;
   }
@@ -614,7 +618,7 @@
 
 .join-hero-card {
   width: min(1120px, 100%);
-  margin: 1.1rem auto 0;
+  margin: clamp(3rem, 4vw, 2.6rem) auto 0;
   border: 1px solid rgba(207, 233, 222, 0.7);
   border-radius: 22px;
   background-image: linear-gradient(
@@ -1069,6 +1073,7 @@
 @media (max-width: 680px) {
   .join-hero-card {
     border-radius: 16px;
+    margin-top: 1.25rem;
   }
 
   .join-job-card,

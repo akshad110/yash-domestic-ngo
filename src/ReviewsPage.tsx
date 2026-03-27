@@ -1,7 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Reveal from "./components/Reveal";
-import { sendToWhatsApp } from "./lib/whatsapp";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
 import { api } from "./lib/api";
@@ -55,14 +54,6 @@ function ReviewsPage() {
     setSubmitMessage("");
 
     await api.post("/reviews", { name, message, rating });
-    sendToWhatsApp(
-      [
-        "New Website Review Submission",
-        `Name: ${name}`,
-        `Rating: ${rating}/5`,
-        `Message: ${message}`,
-      ].join("\n"),
-    );
     setName("");
     setMessage("");
     setRating(5);
