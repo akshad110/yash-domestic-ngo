@@ -21,9 +21,18 @@ const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@gmail.com";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin@123";
 const FRONTEND_URL = process.env.FRONTEND_URL || "*";
 
+/** Single URL, comma-separated list, or * (reflect request origin). */
+function resolveCorsOrigin(raw) {
+  if (!raw || raw === "*") return true;
+  const list = raw.split(",").map((s) => s.trim()).filter(Boolean);
+  if (list.length === 0) return true;
+  if (list.length === 1) return list[0];
+  return list;
+}
+
 app.use(
   cors({
-    origin: FRONTEND_URL === "*" ? true : FRONTEND_URL,
+    origin: resolveCorsOrigin(FRONTEND_URL),
     credentials: true,
   }),
 );
