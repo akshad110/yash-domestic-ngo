@@ -87,6 +87,7 @@ function App() {
     impactCounters.map(() => 0),
   );
   const [activeJoinSlide, setActiveJoinSlide] = useState(0);
+  const [isDoctorDetailsOpen, setIsDoctorDetailsOpen] = useState(false);
 
   useEffect(() => {
     const heroElement = heroRef.current;
@@ -434,9 +435,26 @@ function App() {
                           in
                         </a>
                       </div>
-                      <button type="button" className="about-doctor-btn">
-                        Read More
+                      <button
+                        type="button"
+                        className="about-doctor-btn"
+                        onClick={() => setIsDoctorDetailsOpen((prev) => !prev)}
+                        aria-expanded={isDoctorDetailsOpen}
+                      >
+                        {isDoctorDetailsOpen ? "Read Less" : "Read More"}
                       </button>
+                      {isDoctorDetailsOpen ? (
+                        <div className="about-doctor-details">
+                          <p>
+                            <strong>Location:</strong> Near Sur Mandir Cinema, Abu Highway Road,
+                            Delhigate, Palanpur-385001, Gujarat.
+                          </p>
+                          <p>
+                            <strong>Services:</strong> Pet clinic, major/minor surgery,
+                            corrective surgery, and veterinary services.
+                          </p>
+                        </div>
+                      ) : null}
                     </div>
                   </article>
                 </section>
