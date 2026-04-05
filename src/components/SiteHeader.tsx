@@ -47,6 +47,13 @@ function SiteHeader({ activeHome: _activeHome = false }: SiteHeaderProps) {
     location.pathname === "/" &&
     (location.hash.toLowerCase() === "#about-us" || isAboutInView);
   const isHomeActive = location.pathname === "/" && !isAboutActive;
+  const isOurPillarsActive = [
+    "/medical-hub",
+    "/social-growth",
+    "/animal-eco-care",
+  ].includes(location.pathname);
+  const isGetInvolvedActive = ["/donate", "/join-us"].includes(location.pathname);
+  const isNetworkActive = ["/branches", "/reviews"].includes(location.pathname);
 
   const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
@@ -70,7 +77,11 @@ function SiteHeader({ activeHome: _activeHome = false }: SiteHeaderProps) {
   return (
     <header className="site-header">
       <div className="brand-logo" aria-label="Site logo">
-        <img src="/yash-dog-logo.jpg" alt="Yash Dogs" className="brand-logo-image" />
+        <img
+          src="/logoimg.jpeg"
+          alt="Yash Domestic Research Centre"
+          className="brand-logo-image"
+        />
       </div>
       <button
         className="nav-toggle"
@@ -92,7 +103,10 @@ function SiteHeader({ activeHome: _activeHome = false }: SiteHeaderProps) {
         </Link>
 
         <div className="nav-item">
-          <button className="nav-link nav-trigger" type="button">
+          <button
+            className={`nav-link nav-trigger ${isOurPillarsActive ? "active" : ""}`}
+            type="button"
+          >
             OUR PILLARS <span className="arrow">v</span>
           </button>
           <div className="dropdown-menu">
@@ -103,7 +117,10 @@ function SiteHeader({ activeHome: _activeHome = false }: SiteHeaderProps) {
         </div>
 
         <div className="nav-item">
-          <button className="nav-link nav-trigger" type="button">
+          <button
+            className={`nav-link nav-trigger ${isGetInvolvedActive ? "active" : ""}`}
+            type="button"
+          >
             GET INVOLVED <span className="arrow">v</span>
           </button>
           <div className="dropdown-menu">
@@ -113,7 +130,10 @@ function SiteHeader({ activeHome: _activeHome = false }: SiteHeaderProps) {
         </div>
 
         <div className="nav-item">
-          <button className="nav-link nav-trigger" type="button">
+          <button
+            className={`nav-link nav-trigger ${isNetworkActive ? "active" : ""}`}
+            type="button"
+          >
             NETWORK <span className="arrow">v</span>
           </button>
           <div className="dropdown-menu">

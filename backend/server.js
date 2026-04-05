@@ -17,7 +17,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/yash-domestic";
 const JWT_SECRET = process.env.JWT_SECRET || "change-this-secret";
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@gmail.com";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "divyar9979@gmail.com";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin@123";
 const FRONTEND_URL = process.env.FRONTEND_URL || "*";
 

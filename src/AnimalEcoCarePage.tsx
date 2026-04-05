@@ -36,47 +36,47 @@ const wildRescueCards = [
 ];
 
 const domesticAnimalImages = [
-  "/pet-cat-clinic.png",
-  "/pet-dog-clinic.png",
-  "/pet-grooming-1.png",
-  "/pet-mating-service.png",
-  "/rajwadi-horse.png",
-  "/sheep-clinic.png",
-  "/rsz_pexels-pixabay-33152.jpg",
-  "/rsz_pexels-pixabay-104827.jpg",
+  "/img16.jpeg",
+  "/img17.jpeg",
+  "/img18.jpeg",
+  "/img19.jpeg",
+  "/img20.jpeg",
+  "/img21.jpeg",
+  "/img22.jpeg",
+  "/img23.jpeg",
 ];
 
 const petRescueCarouselImages = [
   {
-    src: "/pet-cat-clinic.png",
+    src: "/img24.jpeg",
     alt: "Pet cat receiving clinic support",
   },
   {
-    src: "/pet-dog-clinic.png",
+    src: "/img25.jpeg",
     alt: "Pet dog in outdoor clinic setting",
   },
   {
-    src: "/pet-grooming-1.png",
+    src: "/img26.jpeg",
     alt: "Pet grooming and care showcase",
   },
   {
-    src: "/pet-mating-service.png",
+    src: "/img27.jpeg",
     alt: "Pet mating service support",
   },
   {
-    src: "/rajwadi-horse.png",
+    src: "/img28.jpeg",
     alt: "Rajwadi horse care support",
   },
   {
-    src: "/sheep-clinic.png",
+    src: "/img29.jpeg",
     alt: "Sheep clinic treatment and care",
   },
   {
-    src: "/rsz_pexels-pixabay-33152.jpg",
+    src: "/img30.jpeg",
     alt: "Rabbit care and rescue visual",
   },
   {
-    src: "/rsz_pexels-pixabay-104827.jpg",
+      src: "/img31.jpeg",
     alt: "Cat rescue portrait visual",
   },
 ];
@@ -86,37 +86,37 @@ const clinicServices = [
     title: "Pet Grooming",
     description:
       "Fully equipped pet grooming salon to keep them looking their best from hair cuts to teeth brushing to bathing.",
-    image: "/pet-grooming-1.png",
+    image: "/img30.jpeg",
   },
   {
     title: "Pet Training",
     description:
       "Dealing with your pup's mood swings? We will help you get for it. Looking for dog training sessions at home?",
-    image: "/pet-dog-clinic.png",
+    image: "/img26.jpeg",
   },
   {
     title: "Home Consulting",
     description:
       "Our experts available for for Home Visits. Your pet deserves only the best consultation. Book your appointment now.",
-    image: "/home-consulting.png",
+    image: "/img19.jpeg",
   },
   {
     title: "Mating Service",
     description:
       "We provide mating services for your pets.we also help you to find out the best match for your pet mating in the easiest way.",
-    image: "/pet-mating-service.png",
+    image: "/img32.jpeg",
   },
   {
     title: "Pet Hospital",
     description:
       "Leading multispecialty pet care hospital that has the best veterinary doctors focused on your pet's health and wellbeing.",
-    image: "/pet-hospital.png",
+    image: "/img33.jpeg",
   },
   {
     title: "Online Consultation",
     description:
       "80% of a pet's health issues can be solved online. Get a call with first consultation. Ask for check up if neccessory.",
-    image: "/online-consulting.png",
+    image: "/img3.jpeg",
   },
 ];
 

@@ -45,17 +45,20 @@ function Sidebar() {
 
   const handleLogout = () => {
     localStorage.removeItem("adminToken");
+    localStorage.removeItem("adminEmail");
     navigate("/adminlogin");
   };
 
   return (
     <aside className="admin-sidebar">
       <div className="admin-brand-wrap">
-        <span className="admin-brand-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 21s-7-4.2-7-10a4.8 4.8 0 0 1 8.4-3.2L12 9.3l-1.4-1.5A4.8 4.8 0 0 1 19 11c0 5.8-7 10-7 10Z" />
-          </svg>
-        </span>
+        <img
+          src="/logoimg.jpeg"
+          alt=""
+          className="admin-brand-logo-img"
+          width={46}
+          height={46}
+        />
         <p className="admin-brand">Yash Domestic</p>
       </div>
       <nav className="admin-nav">

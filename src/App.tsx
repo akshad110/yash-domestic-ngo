@@ -10,10 +10,8 @@ const checkupImage =
 const doctorImage =
   "https://t4.ftcdn.net/jpg/06/44/21/33/360_F_644213335_cEte9L9Clkz5zwYtPmpgKUhfABbl66Wm.jpg";
 const joinUsImages = [
-  "/online-consulting.png",
-  "/pet-hospital.png",
-  // "https://images.pexels.com/photos/6646971/pexels-photo-6646971.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  // "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "/img2.jpeg",
+  "/img3.jpeg",
 ];
 
 const impactCounters = [
@@ -35,8 +33,7 @@ const missionPillars = [
     title: "Education and Empowerment",
     description:
       "Skill programs, youth engagement, and support initiatives that unlock opportunity for every age group.",
-    image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=80",
+    image: "/WhatsApp%20Image%202026-04-04%20at%202.09.32%20PM.jpeg",
   },
   {
     tag: "Animal and Eco Care",
@@ -44,7 +41,7 @@ const missionPillars = [
     description:
       "Rescue aid, treatment camps, and eco-actions that protect animals and preserve local ecosystems.",
     image:
-      "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=80",
+      "/img1.jpeg",
   },
 ];
 

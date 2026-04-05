@@ -26,14 +26,14 @@ const clinicalBenefits = [
     description: "Essential medicines provided free",
     caption: "Essential care delivered consistently",
     image:
-      "/39.png",
+      "/img7.jpeg",
   },
   {
     title: "Health Awareness",
     description: "Education about hygiene and prevention",
     caption: "Prevention-first community education",
     image:
-      "https://images.unsplash.com/photo-1542884748-2b87b36c6b90?auto=format&fit=crop&w=1200&q=80",
+      "/img6.jpeg",
   },
 ];
 
@@ -45,28 +45,28 @@ const impactGallery = [
   "/62.png",
   "/63.png",
   "/33.png",
-  "/home-consulting.png",
+  "/img15.jpeg",
 ];
 
 const treatmentGallery = [
   {
-    src: "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=1200&q=80",
+    src: "/img8.jpeg",
     alt: "Doctors reviewing patient diagnostics on screen",
   },
   {
-    src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+    src: "/img9.jpeg",
     alt: "Modern treatment room and diagnostic equipment",
   },
   {
-    src: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=1200&q=80",
+    src: "/img10.jpeg",
     alt: "Doctor consulting a patient during treatment",
   },
   {
-    src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    src: "/img11.jpeg",
     alt: "Medical staff preparing treatment support",
   },
   {
-    src: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=1200&q=80",
+    src: "/img12.jpeg",
     alt: "Nurse assisting patient care workflow",
   },
   {

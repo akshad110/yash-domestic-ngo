@@ -10,7 +10,7 @@ const pastWorkCards = [
     text: "Community sessions in schools and neighborhoods focused on health, hygiene, and social awareness.",
     href: "/medical-hub",
     image:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1400&q=80",
+      "/img31.jpeg",
   },
   {
     tag: "Social Growth",
@@ -18,7 +18,7 @@ const pastWorkCards = [
     text: "Regular blood donation and health check camps organized with volunteers and local hospitals.",
     href: "/social-growth",
     image:
-      "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1400&q=80",
+      "/img22.jpeg",
   },
   {
     tag: "Animal and Eco Care",
@@ -26,7 +26,7 @@ const pastWorkCards = [
     text: "Injured animal rescue support and plantation drives to protect local biodiversity and green spaces.",
     href: "/animal-eco-care",
     image:
-      "https://images.unsplash.com/photo-1618477462146-050d2767eac4?auto=format&fit=crop&w=1400&q=80",
+      "/img13.jpeg"
   },
 ];
 
@@ -37,10 +37,11 @@ const donationUsage = [
   "Plant trees and improve green areas",
 ];
 
-const upiId = "unitycommunity@upi";
+const upiId = "yashdomesticresearch.65034783@hdfcbank";
+const upiQrImage = "/Screenshot%202026-04-05%20141831.png";
 
 function DonatePage() {
-  const upiPaymentLink = `upi://pay?pa=${upiId}&pn=The%20Unity%20Community&cu=INR`;
+  const upiPaymentLink = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent("Yash Domestic")}&cu=INR`;
 
   return (
     <div className="page-shell donate-page-shell">
@@ -111,16 +112,24 @@ function DonatePage() {
           <header className="medical-hub-section-head">
             <h2>Pay via UPI</h2>
           </header>
-          <Reveal className="donate-payment-card" direction="scale">
-            <p className="donate-payment-label">UPI ID</p>
-            <p className="donate-upi-id">{upiId}</p>
-            <a className="hero-cta-primary donate-pay-btn" href={upiPaymentLink}>
-              Pay Now
-            </a>
-            <p className="donate-payment-note">
-              You can use any UPI app by entering this UPI ID manually.
-            </p>
-          </Reveal>
+          <div className="donate-payment-layout">
+            <Reveal className="donate-payment-card" direction="scale">
+              <p className="donate-payment-label">UPI ID</p>
+              <p className="donate-upi-id">{upiId}</p>
+              <a className="hero-cta-primary donate-pay-btn" href={upiPaymentLink}>
+                Pay Now
+              </a>
+              <p className="donate-payment-note">
+                You can use any UPI app by entering this UPI ID manually, or scan the QR code.
+              </p>
+            </Reveal>
+            <Reveal className="donate-qr-aside" direction="scale" delay={0.06}>
+              <figure className="donate-qr-figure">
+                <img src={upiQrImage} alt="UPI QR code to pay Yash Domestic" width={200} height={200} />
+                <figcaption className="donate-qr-caption">Scan to pay</figcaption>
+              </figure>
+            </Reveal>
+          </div>
         </section>
       </main>
       <div className="about-footer-flow">

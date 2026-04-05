@@ -11,7 +11,7 @@ const impactCards = [
     description: "Hands-on work that directly improves animal lives and local communities.",
     caption: "Meaningful impact through daily service",
     image:
-      "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=1400&q=80",
+      "/img16.jpeg"
   },
   {
     tag: "Social Growth",
@@ -19,7 +19,7 @@ const impactCards = [
     description: "Structured support with trained on-ground teams and practical guidance.",
     caption: "Guided teamwork with trusted support",
     image:
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1400&q=80",
+      "/img7.jpeg"
   },
   {
     tag: "Animal and Eco Care",
@@ -27,7 +27,7 @@ const impactCards = [
     description: "Collaborative culture with volunteers, field teams, and operations staff.",
     caption: "Strong community backing at every step",
     image:
-      "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1400&q=80",
+      "/img21.jpeg",
   },
 ];
 
@@ -138,7 +138,7 @@ function JoinUsPage() {
         <section className="join-job-card" id="careers">
           <Reveal className="join-job-media" direction="left">
             <img
-              src="https://plus.unsplash.com/premium_photo-1771681267444-f9762835a2b6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/img39.jpeg"
               alt="Rescue team member carrying an injured dog"
             />
           </Reveal>
@@ -184,7 +184,7 @@ function JoinUsPage() {
           </Reveal>
           <Reveal className="join-volunteer-media" direction="right">
             <img
-              src="https://images.unsplash.com/photo-1573798484153-da43eda898f6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/img36.jpeg"
               alt="Volunteer with a rescued animal"
             />
           </Reveal>

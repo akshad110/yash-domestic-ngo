@@ -8,7 +8,11 @@ function SiteFooter() {
         <div className="footer-main">
           <Reveal direction="left">
             <section className="footer-brand-col">
-              {/* <img src="public\yash-dog-logo-1-e1710572557873-removebg-preview.png" alt="Yash Dogs" className="footer-brand-logo" /> */}
+              <img
+                src="/logoimg.jpeg"
+                alt="Yash Domestic Research Centre"
+                className="footer-brand-logo"
+              />
               <p className="footer-kicker">The Unity Community</p>
               <h2>Healing lives, nurturing ecosystems, strengthening futures.</h2>
               <p>
@@ -47,7 +51,7 @@ function SiteFooter() {
               <h3>Connect</h3>
               <p className="footer-contact-line">Nr. Surmandir Cinema, Palanpur, GJ</p>
               <a href="tel:+919081760076">+91 9081760076</a>
-              <a href="mailto:contact@yashdogs.com">contact@yashdogs.com</a>
+              <a href="mailto:divyar9979@gmail.com">divyar9979@gmail.com</a>
             </section>
           </Reveal>
         </div>

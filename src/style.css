@@ -530,6 +530,48 @@
   margin-bottom: 0.7rem;
 }
 
+.donate-payment-layout {
+  margin: 0.8rem auto 0;
+  max-width: 820px;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(160px, 220px);
+  gap: clamp(1rem, 4vw, 2rem);
+  align-items: center;
+}
+
+.donate-payment-layout .donate-payment-card {
+  margin: 0;
+  max-width: none;
+}
+
+.donate-qr-aside {
+  display: flex;
+  justify-content: center;
+}
+
+.donate-qr-figure {
+  margin: 0;
+  text-align: center;
+}
+
+.donate-qr-figure img {
+  display: block;
+  width: min(220px, 100%);
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(47, 125, 106, 0.22);
+  box-shadow: 0 12px 28px rgba(12, 55, 40, 0.14);
+  background: #fff;
+}
+
+.donate-qr-caption {
+  margin: 0.55rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #3a6759;
+  letter-spacing: 0.04em;
+}
+
 .donate-payment-card {
   margin: 0.8rem auto 0;
   max-width: 460px;
@@ -602,6 +644,15 @@
     grid-template-columns: 1fr;
   }
 
+  .donate-payment-layout {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+  }
+
+  .donate-payment-layout .donate-payment-card {
+    max-width: 100%;
+  }
+
   .donate-payment-card {
     max-width: 100%;
   }
@@ -626,7 +677,7 @@
       rgba(0, 0, 0, 0.52),
       rgba(0, 0, 0, 0.46)
     ),
-    url("https://images.unsplash.com/photo-1535090467336-9501f96eef89?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    url("/img40.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1266,6 +1317,10 @@ main {
 .arrow {
   font-size: 0.72rem;
   color: #47615b;
+}
+
+.nav-link.active .arrow {
+  color: var(--primary-green);
 }
 
 .dropdown-menu {
@@ -4337,20 +4392,15 @@ main {
   gap: 0.45rem;
 }
 
-.admin-brand-icon {
+.admin-brand-logo-img {
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(145deg, #2f7d6a, #4fb78f);
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  padding: 0.22rem;
   box-shadow: 0 12px 24px rgba(2, 18, 13, 0.35);
-}
-
-.admin-brand-icon svg {
-  width: 23px;
-  height: 23px;
-  fill: #edfff7;
 }
 
 .admin-brand {
@@ -4836,7 +4886,7 @@ main {
     gap: 0.55rem;
   }
 
-  .admin-brand-icon {
+  .admin-brand-logo-img {
     width: 34px;
     height: 34px;
     border-radius: 10px;
