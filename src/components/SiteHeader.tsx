@@ -78,7 +78,7 @@ function SiteHeader({ activeHome: _activeHome = false }: SiteHeaderProps) {
     <header className="site-header">
       <div className="brand-logo" aria-label="Site logo">
         <img
-          src="/logoimg.jpeg"
+          src="/logoimg-removebg-preview.png"
           alt="Yash Domestic Research Centre"
           className="brand-logo-image"
         />

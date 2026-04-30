@@ -38,7 +38,7 @@ const donationUsage = [
 ];
 
 const upiId = "yashdomesticresearch.65034783@hdfcbank";
-const upiQrImage = "/Screenshot%202026-04-05%20141831.png";
+const upiQrImage = "/image-removebg-preview%20(2).png";
 
 function DonatePage() {
   const upiPaymentLink = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent("Yash Domestic")}&cu=INR`;

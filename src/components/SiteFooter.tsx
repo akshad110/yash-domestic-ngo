@@ -9,7 +9,7 @@ function SiteFooter() {
           <Reveal direction="left">
             <section className="footer-brand-col">
               <img
-                src="/logoimg.jpeg"
+                src="/logoimg-removebg-preview.png"
                 alt="Yash Domestic Research Centre"
                 className="footer-brand-logo"
               />

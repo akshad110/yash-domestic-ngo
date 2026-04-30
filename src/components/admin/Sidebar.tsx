@@ -53,7 +53,7 @@ function Sidebar() {
     <aside className="admin-sidebar">
       <div className="admin-brand-wrap">
         <img
-          src="/logoimg.jpeg"
+          src="/logoimg-removebg-preview.png"
           alt=""
           className="admin-brand-logo-img"
           width={46}
